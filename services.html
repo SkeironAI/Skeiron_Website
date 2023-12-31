@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>Skeiron</title>
+</head>
+<body class="dual_section">
+    <nav>
+        <div class="menu">
+            <div class="sections">
+                <p><a href="index.html" class="material-icons">home</a></p>
+                <p><a href="services.html">Services</a></p>
+                <p><a href="about.html">About</a></p>
+                <p><a href="contact.html">Contact</a></p>
+                <p><a href="portfolio.html">Portfolio</a></p>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="services_desc">
+            <div class="services_desc_sub">
+                <h1>Services</h1>
+                <h2>About our services</h2>
+                <p>At Skeiron, we specialize in empowering your digital journey through three key services. Our AI integration solutions harness the power of custom-built chatbots, tailored precisely to your needs, transforming interactions and streamlining processes. With our web development expertise, we craft personalized online spaces, resonating with your audience and amplifying engagement. Additionally, our meticulous website management ensures a seamless online presence, driving visibility and enhancing your impact. At Skeiron, we're dedicated to redefining possibilities and delivering bespoke solutions that elevate your online presence.</p>
+            </div>
+        </div>
+        <div class="services_cards">
+            <div>
+                <h3>AI Integration</h3>
+                <p>Our specialty? Tailored AI chatbots, custom-built and trained on your data to match your needs seamlessly. Transforming interactions, boosting engagement effortlessly.</p>
+                <ul>
+                    <li>Your own AI chatbot</li>
+                    <li>Tailored to your needs</li>
+                    <li>Trained on your data</li>
+                </ul>
+                <a href="ai_integration.html"><button>Learn more</button></a>
+            </div>
+        
+            <div id="card">
+                <h3>Web Development</h3>
+                <p>We shape websites to your vision, ensuring they captivate your audience and reflect your essence flawlessly. Your unique online space, crafted to resonate effortlessly and make an impact.</p>
+                <ul>
+                    <li>Website design</li>
+                    <li>Website development</li>
+                    <li>Based on your wishes</li>
+                </ul>
+                <a href="web_development.html"><button id="main">Learn more</button></a>
+            </div>
+        
+            <div>
+                <h3>Website Management</h3>
+                <p>Efficient website management ensures a seamless online presence. Regular updates and optimization bolster visibility, driving engagement and amplifying the site's impact.</p>
+                <ul>
+                    <li>Website hosting</li>
+                    <li>Custom domain + email</li>
+                    <li>Periodic revisions</li>
+                </ul>
+                <a href="website_management.html"><button>Learn more</button></a>
+            </div>
+        </div>
+    </main>
+</body>
+<script>
+    const card = document.getElementById("card");
+
+    card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 1.5;
+        const y = e.clientY - rect.top - rect.height / 1.5;
+
+        const angle = Math.atan2(-x, y);
+        card.style.setProperty("--rotation", angle + "rad");
+});
+</script>
+</html>

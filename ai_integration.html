@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>Skeiron</title>
+</head>
+<body>
+    <nav>
+        <div class="menu">
+            <div class="sections">
+                <p><a href="index.html" class="material-icons">home</a></p>
+                <p><a href="services.html">Services</a></p>
+                <p><a href="about.html">About</a></p>
+                <p><a href="contact.html">Contact</a></p>
+                <p><a href="portfolio.html">Portfolio</a></p>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="service_learn_more">
+            <section class="service_learn_more_sub">
+                <h1>AI Integration</h1>
+                <h2>Automating business processes.</h2>
+                <p>At Skeiron, our AI Integration service is all about crafting personalized chatbots tailored to your business. These chatbots are like digital assistants that automate important tasks, such as handling customer inquiries and supporting staff training sessions. They seamlessly become a part of your team, working behind the scenes to make your processes more efficient.</p>
+                <p>With these chatbots in place, routine tasks become automated, freeing up time for your team to focus on more complex matters. They swiftly handle customer queries, providing instant support, and assist in training your staff by offering interactive modules. Our goal is to leverage AI to enhance your operations, simplifying tasks and enriching the overall customer experience.</p>
+            </section>
+        </section>
+        <section class="service_section_2">
+            <section class="service_section_2_sub">
+                <h3>Use cases</h3>
+                <p>Our chatbots serve essential roles in your business. They act as customer support assistants, swiftly handling queries and providing instant help. Moreover, these chatbots can play a crucial role in staff training, offering interactive modules to educate and upskill your team effectively. From supporting customers to empowering your staff, these chatbots seamlessly fit into your operations, making tasks easier and improving both customer service and staff training.</p>
+            </section>
+            <section class="service_section_2_sub">
+                <h3>Value</h3>
+                <p>Our custom chatbots bring substantial value by automating crucial tasks within your business. By swiftly handling routine customer inquiries, these chatbots ensure an immediate and responsive service, enhancing customer satisfaction. This quick and efficient support leaves a lasting impression, boosting your customers' confidence in your business. Moreover, by automating these interactions, your team saves valuable time, allowing them to concentrate on more intricate aspects of your business. Similarly, these chatbots serve as efficient tools for staff training, offering accessible resources and interactive modules. They empower your employees by providing immediate access to learning materials, contributing to a more skilled and proficient workforce. Ultimately, the automation provided by these chatbots not only ensures a smooth customer experience but also optimizes internal processes, leading to increased efficiency and improved service quality.</p>
+            </section>
+        </section>
+        <section class="service_section_3">
+            <div class="pricing_cards">
+                <div id="card">
+                    <h3>Pricing</h3>
+                    <ul class="pricing_desc_main">
+                        <li>Our pricing structure allows for maximum flexibility for you to choose what's necessary for your business.</li>
+                        <li>Note: pricing is dependent on multiple variables, and may differ based on your needs.</li>
+                    </ul>
+                    <ul>
+                        <li><h4>Setup fee</h4></li>
+                        <li>Our setup fee for AI integration covers the initial costs involved in building and training your custom chatbots. This fee encompasses the groundwork, including a call to discuss your needs, initial setup, and gathering data to train the bot on. It ensures a tailored approach from the outset, laying the foundation for the custom chatbot you want and need.</li>
+                        <li>Price range: € 1.000 - € 2.500+</li>
+                    </ul>
+                    <ul>
+                        <li><h4>Monthly subscription</h4></li>
+                        <li>As these chatbots make use of generative AI, their utilization involves recurring costs, which are determined by the volume of requests your bot needs to handle.</li>
+                        <li>This subscription also includes periodic revision and retraining of your bots, to ensure they stay up-to-date.</li>
+                        <li>Price range: € 200 - € 1.000+ / month</li>
+                    </ul>
+                    <a href="contact.html"><button id="main">Contact us</button></a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script>
+    const card = document.getElementById("card");
+
+card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 1.5;
+    const y = e.clientY - rect.top - rect.height / 1.5;
+
+    const angle = Math.atan2(-x, y);
+    card.style.setProperty("--rotation", angle + "rad");
+});
+</script>
+</html>

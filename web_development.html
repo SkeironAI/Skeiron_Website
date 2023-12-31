@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>Skeiron</title>
+</head>
+<body>
+    <nav>
+        <div class="menu">
+            <div class="sections">
+                <p><a href="index.html" class="material-icons">home</a></p>
+                <p><a href="services.html">Services</a></p>
+                <p><a href="about.html">About</a></p>
+                <p><a href="contact.html">Contact</a></p>
+                <p><a href="portfolio.html">Portfolio</a></p>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="service_learn_more">
+            <section class="service_learn_more_sub">
+                <h1>Web Development</h1>
+                <h2>Every business needs it.</h2>
+                <p>Your business deserves an exceptional online showcase, and at Skeiron, we specialize in creating precisely that. Our focus on crafting clean, front-end websites caters perfectly to service-based businesses—be it electricians, roofers, plumbers, painters, or anything else.</p>
+                <p>We specialize in designing and building the website of your dreams from scratch, staying in touch with you during the whole process; ensuring the end result will be exactly how you want it.</p>
+                <p>In addition to our meticulous website creation process, our commitment extends beyond the initial build. With our Revision service, we ensure your website stays current and aligned with your evolving business needs. Whether it's updating content, incorporating new features, or refining the design, we offer ongoing support to keep your online presence fresh and relevant, adapting seamlessly to your business growth.</p>
+            </section>
+        </section>
+        <section class="service_section_2">
+            <section class="service_section_2_sub">
+                <h3>Use cases</h3>
+                <p>Our web development service caters to a diverse range of service-oriented businesses. Picture a professional establishing an online hub to showcase expertise and availability, enabling clients to schedule appointments seamlessly. Contractors and service providers leverage our websites as visual portfolios, spotlighting completed projects and testimonials to instill trust among potential customers. These platforms facilitate easy inquiries, offer insights, and provide a canvas to exhibit past work and service offerings. Whatever your line of service, our tailored websites bolster your online presence, fostering engagement and fostering growth within your niche.</p>
+            </section>
+            <section class="service_section_2_sub">
+                <h3>Value</h3>
+                <p>At Skeiron, we understand the challenges of website creation. Our service aims to simplify this process for you completely. From the initial concept to the final build, we handle everything according to your preferences. We stay in contact during the design and development of the website, valuing your feedback to ensure the end product aligns perfectly with what you envision. By taking care of the technicalities, we free you to focus on your core expertise, providing a website that mirrors your brand and resonates with your audience effortlessly.</p>
+            </section>
+        </section>
+        <section class="service_section_3">
+            <div class="pricing_cards">
+                <div id="card">
+                    <h3>Pricing</h3>
+                    <ul class="pricing_desc_main">
+                        <li>Our pricing structure allows for maximum flexibility for you to choose what's necessary for your business.</li>
+                        <li>Note: pricing is dependent on multiple variables, and may differ based on your needs.</li>
+                    </ul>
+                    <ul>
+                        <li><h4>Setup fee</h4></li>
+                        <li>Our setup fee for website development covers the initial costs involved in configuring and customizing your digital platform. This fee encompasses the groundwork, including design consultations, initial setup, and aligning the website with your specific requirements. It ensures a tailored approach from the outset, laying the foundation for a personalized and effective online presence.</li>
+                        <li>Price range: € 2.500 - € 5.000+</li>
+                    </ul>
+                    <ul>
+                        <li><h4>Revision</h4></li>
+                        <li>We understand that your business is evolving. As it does, your website may need to be revised to stay relevant to your business.</li>
+                        <li>Note: periodic revision is also included in our <a href="website_management.html">website management</a> subscription-based service.</li>
+                        <li>Price range (single revision): € 500 - € 2.500+</li>
+                    </ul>
+                    <a href="contact.html"><button id="main">Contact us</button></a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script>
+    const card = document.getElementById("card");
+
+card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 1.5;
+    const y = e.clientY - rect.top - rect.height / 1.5;
+
+    const angle = Math.atan2(-x, y);
+    card.style.setProperty("--rotation", angle + "rad");
+});
+</script>
+</html>

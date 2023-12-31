@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>Skeiron</title>
+</head>
+<body>
+    <nav>
+        <div class="menu">
+            <div class="sections">
+                <p><a href="index.html" class="material-icons">home</a></p>
+                <p><a href="services.html">Services</a></p>
+                <p><a href="about.html">About</a></p>
+                <p><a href="contact.html">Contact</a></p>
+                <p><a href="portfolio.html">Portfolio</a></p>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="service_learn_more">
+            <section class="service_learn_more_sub">
+                <h1>Website Management</h1>
+                <p>At Skeiron, our Website Management service is designed to alleviate the burdens of maintaining an online presence. We take care of everything, from hosting and domain management to implementing custom email addresses. Our commitment extends to ensuring your website stays relevant and up-to-date through periodic revisions, catering to your requests promptly. With our comprehensive approach, we handle the technical aspects, allowing you to focus on your business, while we ensure your website remains seamless, functional, and reflects your evolving needs.</p>
+            </section>
+        </section>
+        <section class="service_section_2">
+            <section class="service_section_2_sub">
+                <h3>Services offered</h3>
+                <ul>
+                    <li>Hosting</li>
+                    <li>Domain name</li>
+                    <li>Periodic website revision</li>
+                    <li>Custom email address</li>
+                    <li>Basic SEO</li>
+                </ul>
+            </section>
+            <section class="service_section_2_sub">
+                <h3>Value</h3>
+                <p>Our Website Management service brings immense value by taking the hassle out of maintaining your online presence. With us handling hosting, domain management, and custom email setups, you can redirect your energy toward core business activities. Additionally, our commitment to periodic website revisions ensures that your site remains fresh, relevant, and aligned with your evolving business needs. This comprehensive service not only guarantees a seamless online presence but also frees up your time, allowing you to focus on growing your business while we ensure your website reflects the best of your brand.</p>
+            </section>
+        </section>
+        <section class="service_section_3">
+            <div class="pricing_cards">
+                <div id="card">
+                    <h3>Pricing</h3>
+                    <ul class="pricing_desc_main">
+                        <li>Our pricing structure allows for maximum flexibility for you to choose what's necessary for your business.</li>
+                        <li>Note: pricing is dependent on multiple variables, and may differ based on your needs.</li>
+                    </ul>
+                    <ul>
+                        <li><h4>Monthly subscription</h4></li>
+                        <li>Our website management service is based on a monthly subscription. This monthly fee is based on the services you require.</li>
+                        <li>Price range: € 250 - € 1.000+ per month</li>
+                    </ul>
+                    <ul>
+                        <li><h4>Cancellation</h4></li>
+                        <li>We understand that your business is evolving, and at some point, you may no longer require these services. We ensure that cancellation is easy and straightforward.</li>
+                        <li>Cancellation of your subscription is entirely free if done 6 months after initiating your subscription. Should you choose to cancel before this time, a payment equivalent to 3 months' worth of subscription fees will be required. This charge is necessary to cover the incurred setup costs.</li>
+                    </ul>
+                    <a href="contact.html"><button id="main">Contact us</button></a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script>
+    const card = document.getElementById("card");
+
+card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 1.5;
+    const y = e.clientY - rect.top - rect.height / 1.5;
+
+    const angle = Math.atan2(-x, y);
+    card.style.setProperty("--rotation", angle + "rad");
+});
+</script>
+</html>
