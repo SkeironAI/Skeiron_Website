@@ -18,7 +18,17 @@
                 <p><a href="contact.html">Contact</a></p>
                 <p><a href="portfolio.html">Portfolio</a></p>
             </div>
+            <button class="hamburger">
+                <div class="bar"></div>
+            </button>
         </div>
+    </nav>
+    <nav class="mobile_nav">
+        <a href="index.html" class="material-icons">home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="portfolio.html">Portfolio</a>
     </nav>
     <main>
         <section class="contact_front">
@@ -39,4 +49,15 @@
         </section>
     </main>
 </body>
+<script>
+window.onload = function () {
+    const menu_btn = document.querySelector('.hamburger');
+    const mobile_menu = document.querySelector('.mobile_nav');
+
+    menu_btn.addEventListener('click', function () {
+        menu_btn.classList.toggle('is-active');
+        mobile_menu.classList.toggle('is-active');
+    });
+}
+</script>
 </html>
