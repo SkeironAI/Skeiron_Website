@@ -10,7 +10,6 @@
 
 * {
     color: var(--white);
-    font-size: 18px;
 }
 
 ::-webkit-scrollbar {
@@ -28,12 +27,18 @@
 
 body {
     background-image: url("Images/Skeiron_index_background.png");
-    background-size: 100vw;
+    background-size: 100%;
     height: 300vh;
     width: 100%;
     font-family: var(--font);
     margin: 0;
     position: relative;
+
+    @media screen and (max-width: 767px) {
+        background-size: auto;
+        width: 100%;
+        height: auto;
+    }
 }
 
 nav {
@@ -55,7 +60,12 @@ nav {
     align-items: center;
     justify-content: center;
     z-index: 5;
-    font-size: var(--h);
+    font-size: 1.2rem;
+
+    @media screen and (max-width: 767px) {
+        font-size: 16px;
+        justify-content: right;
+    }
 }
 
 .sections {
@@ -65,6 +75,11 @@ nav {
     box-sizing: border-box;
     gap: 2rem;
     justify-content: center;
+
+    @media screen and (max-width: 767px) {
+        gap: 1.2rem;
+        display: none;
+    }
 }
 
 nav p {
@@ -73,6 +88,83 @@ nav p {
 }
 
 .sections a {
+    text-decoration: none;
+}
+
+.hamburger {
+    position: relative;
+    display: block;
+    width: 35px;
+    cursor: pointer;
+
+    appearance: none;
+    outline: none;
+    background: none;
+    border: none;
+
+    z-index: 20;
+
+    @media screen and (min-width: 767px) {
+        display: none;
+    }
+}
+
+.hamburger .bar, .hamburger:after, .hamburger:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #FFF;
+    margin: 6px 0px;
+    transition: 0.4s;
+    opacity: 1;
+    z-index: 98;
+}
+
+.hamburger.is-active:before {
+    transform: rotate(-45deg) translate(-9px, 6px);
+    opacity: 1;
+}
+
+.hamburger.is-active:after {
+    transform: rotate(45deg) translate(-7px, -4px);
+}
+
+.hamburger.is-active .bar {
+    opacity: 0;
+}
+
+.mobile_nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100vh;
+    background-color: #050505;
+    z-index: 1;
+    padding-top: 120px;
+    transition: 0.4s;
+
+    @media screen and (min-width: 767px) {
+        display: none;
+    }
+}
+
+.mobile_nav.is-active {
+    left: 0;
+}
+
+.mobile_nav a {
+    display: block;
+    text-align: center;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background-color: black;
+    /* border-radius: 10px; */
+    border: 1px solid #444;
+    /* box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.05); */
+    cursor: pointer;
     text-decoration: none;
 }
 
@@ -109,6 +201,10 @@ h1 {
 
 .index_section_1_sub ul {
     padding-inline-start: var(--p);
+
+    @media screen and (max-width: 767px) {
+        padding-inline-start: calc(3*var(--p));
+    }
 }
 
 .index_section_1 li {
@@ -128,6 +224,10 @@ h1 {
     animation: fade linear both;
     animation-timeline: view();
     animation-range: entry 50% cover 50%;
+
+    @media screen and (max-width: 767px) {
+        justify-content: center;
+    }
 }
 
 @keyframes fade {
@@ -145,7 +245,12 @@ h1 {
     justify-content: flex-start;
     width: 30%;
     font-size: var(--p);
-    line-height: 1.5rem;;
+    line-height: 1.5rem;
+
+    @media screen and (max-width: 767px) {
+        width: 90%;
+        text-align: justify;
+    }
 }
 
 h2 {
@@ -157,6 +262,10 @@ h2 {
     flex-direction: column;
     justify-content: flex-start;
     width: 30%;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 }
 
 .index_section_3 {
@@ -171,9 +280,17 @@ h2 {
     animation: fade linear both;
     animation-timeline: view();
     animation-range: entry 50% cover 50%;
+
+    @media screen and (max-width: 767px) {
+        height: 1740px;
+        align-items: flex-start;
+        animation: none;
+    }
 }
 
 .services_cards {
+    height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -182,6 +299,16 @@ h2 {
 
     font-family: var(--font);
 
+    @media screen and (max-width: 767px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        column-gap: 0;
+        row-gap: 20px;
+        height: 1740px;
+        padding-bottom: 40px;
+        margin-top: 40px;
+    }
 }
 
 .services_cards div {
@@ -196,6 +323,14 @@ h2 {
     padding: 40px;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (max-width: 767px) {
+        width: 280px;
+        padding: 20px;
+        justify-content: center;
+        
+        background-color: black;
+    }
 }
 
 .services_cards div h3 {
@@ -228,7 +363,7 @@ h2 {
     position: relative;
 }
 
-button {
+#secondary {
     height: 50px;
     width: 100%;
     border-radius: 10px;
@@ -238,17 +373,34 @@ button {
     box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.15);
     transition: all 0.2 ease;
     cursor: pointer;
+
+    @media screen and (max-width: 450px) {
+        color: black;
+        background-color: white;
+        box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.25);
+    }
 }
 
-button:hover {
+#secondary:hover {
     color:black;
     background-color: white;
+
+    @media screen and (max-width: 767px) {
+        color: white;
+        background-color: black;
+    }
 }
 
 #main {
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #888;
     color: black;
     background-color: white;
     box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.25);
+    transition: all 0.2 ease;
+    cursor: pointer;
 }
 
 #main:hover {
@@ -264,6 +416,12 @@ button:hover {
     font-family: var(--font);
     margin: 0;
     position: relative;
+
+    @media screen and (max-width: 767px) {
+        background-size: auto;
+        width: 100%;
+        height: auto;
+    }
 }
 
 .services_desc {
@@ -281,21 +439,23 @@ button:hover {
 .services_desc_sub {
     display: flex;
     flex-direction: column;;
-    max-width: 50vw;
+    width: 50vw;
     line-height: 1.5rem;
+
+    @media screen and (max-width: 767px) {
+        width: 65%;
+        margin-top: 10vh;
+    }
+}
+
+.services_desc_sub h1 {
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 }
 
 .services_desc_sub h1 {
     text-align: center;
-}
-
-.services_cards {
-    height: 100vh;
-    width: 100%;
-
-    animation: fade linear both;
-    animation-timeline: view();
-    animation-range: entry 50% cover 50%;
 }
 
 .service_learn_more {
@@ -306,14 +466,24 @@ button:hover {
     align-items: center;
     justify-content: center;
 
-    animation: fade-out linear both;
-    animation-timeline: view();
-    animation-range: cover 50% cover 65%;
+    @media screen and (min-width: 767px) {
+        animation: fade-out linear both;
+        animation-timeline: view();
+        animation-range: cover 50% cover 65%;
+    }
+
+    @media screen and (max-width: 767px) {
+        height: auto;
+    }
 }
 
 .service_learn_more_sub {
     width: 75%;
     line-height: 1.5rem;
+
+    @media screen and (max-width: 767px) {
+        margin-top: 10vh;
+    }
 }
 
 .service_learn_more_sub h1 {
@@ -322,6 +492,10 @@ button:hover {
 
 .contact {
     height: 200vh;
+
+    @media screen and (max-width: 767px) {
+        height: 200vh;
+    }
 }
 
 .contact_front {
@@ -344,6 +518,10 @@ button:hover {
 
 .contact_front_sub h1 {
     text-align: center;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 }
 
 .contact_form {
@@ -361,6 +539,10 @@ button:hover {
 
 .contact_form_sub {
     text-align: center;
+
+    @media screen and (max-width: 767px) {
+        width: 70%;
+    }
 }
 
 .contact_form_sub p {
@@ -391,6 +573,10 @@ button:hover {
 
 .portfolio_front_sub h1 {
     text-align: center;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 }
 
 .portfolio_items {
@@ -414,18 +600,37 @@ button:hover {
     align-items: center;
     justify-content: center;
 
-    animation: fade-out linear both;
-    animation-timeline: view();
-    animation-range: cover 50% cover 65%;
+    @media screen and (min-width: 767px) {
+        animation: fade-out linear both;
+        animation-timeline: view();
+        animation-range: cover 50% cover 65%;
+    }
+
+    @media screen and (max-width: 767px) {
+        height: auto;
+        margin-top: 10vh;
+
+        animation: fade-out linear both;
+        animation-timeline: view();
+        animation-range: cover 70% cover 95%;
+    }
 }
 
 .about_front_sub {
     width: 65%;
     line-height: 1.5rem;
+
+    @media screen and (max-width: 767px) {
+        width: 65%;
+    }
 }
 
 .about_front_sub h1 {
     text-align: center;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 }
 
 .service_section_2 {
@@ -438,14 +643,29 @@ button:hover {
     align-items: center;
     justify-content: space-around;
 
-    animation: fade linear both;
-    animation-timeline: view();
-    animation-range: entry 50% cover 50%;
+    @media screen and (min-width: 767px) {
+        animation: fade linear both;
+        animation-timeline: view();
+        animation-range: entry 50% cover 50%;
+    }
+
+    @media screen and (max-width: 767px) {
+        flex-direction: column;
+        justify-content: start;
+        margin-top: 10vh;
+        height: auto;
+    }
 }
 
 .service_section_2_sub {
     width: 25%;
     height: 50vh;
+    line-height: 1.5rem;
+
+    @media screen and (max-width: 767px) {
+        height: auto;
+        width: 75%;
+    }
 }
 
 .service_section_2_sub ul {
@@ -461,9 +681,18 @@ button:hover {
     justify-content: center;
     align-items: center;
 
-    animation: fade linear both;
-    animation-timeline: view();
-    animation-range: entry 50% cover 50%;
+    @media screen and (min-width: 767px) {
+        animation: fade linear both;
+        animation-timeline: view();
+        animation-range: entry 50% cover 50%;
+    }
+
+    @media screen and (max-width: 767px) {
+        height: auto;
+        align-items: start;
+        margin-top: 10vh;
+        margin-bottom: 5vh;
+    }
 }
 
 .pricing_cards {
@@ -475,6 +704,10 @@ button:hover {
     align-items: center;
 
     font-family: var(--font);
+
+    @media screen and (max-width: 767px) {
+        width: 90%;
+    }
 }
 
 .pricing_cards div {
@@ -499,10 +732,15 @@ button:hover {
 
 .pricing_desc_main {
     text-align: center;
+
+    @media screen and (max-width: 767px) {
+        margin-block-start: 0;
+    }
 }
 
 .pricing_cards ul {
     width: 100%;
+    padding-inline-start: 0;
 }
 
 .pricing_cards div p {
@@ -524,4 +762,46 @@ button:hover {
     background-origin: border-box;
     background-clip: padding-box, border-box;
     position: relative;
+}
+
+.ai_integration_h1 {
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+}
+
+.ai_integration_h2_a {
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+}
+
+.ai_integration_h2_b {
+    @media screen and (min-width: 767px) {
+        display: none;
+    }
+}
+
+.web_dev_h1 {
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+}
+
+.web_dev_h2_a {
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+}
+
+.web_dev_h2_b {
+    @media screen and (min-width: 767px) {
+        display: none;
+    }
+}
+
+.web_management_h1 {
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 }
