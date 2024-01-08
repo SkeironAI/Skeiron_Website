@@ -375,6 +375,7 @@ h2 {
     box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.15);
     transition: all 0.2 ease;
     cursor: pointer;
+    font-size: var(--p);
 
     @media screen and (max-width: 450px) {
         color: black;
@@ -403,6 +404,7 @@ h2 {
     box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.25);
     transition: all 0.2 ease;
     cursor: pointer;
+    font-size: var(--p);
 }
 
 #main:hover {
