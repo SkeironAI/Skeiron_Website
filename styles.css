@@ -433,9 +433,11 @@ h2 {
     justify-content: center;
     align-items: center;
 
-    animation: fade-out linear both;
-    animation-timeline: view();
-    animation-range: cover 50% cover 65%;
+       @media screen and (min-width: 767px) {
+        animation: fade-out linear both;
+        animation-timeline: view();
+        animation-range: cover 50% cover 65%;
+    }
 }
 
 .services_desc_sub {
@@ -508,9 +510,11 @@ h2 {
     align-items: center;
     justify-content: center;
 
-    animation: fade-out linear both;
-    animation-timeline: view();
-    animation-range: cover 50% cover 65%;
+    @media screen and (min-width: 767px) {
+        animation: fade-out linear both;
+        animation-timeline: view();
+        animation-range: cover 50% cover 65%;
+    }
 }
 
 .contact_front_sub {
@@ -563,9 +567,11 @@ h2 {
     align-items: center;
     justify-content: center;
 
-    animation: fade-out linear both;
-    animation-timeline: view();
-    animation-range: cover 50% cover 65%;
+    @media screen and (min-width: 767px) {
+        animation: fade-out linear both;
+        animation-timeline: view();
+        animation-range: cover 50% cover 65%;
+    }
 }
 
 .portfolio_front_sub {
@@ -611,10 +617,6 @@ h2 {
     @media screen and (max-width: 767px) {
         height: auto;
         margin-top: 10vh;
-
-        animation: fade-out linear both;
-        animation-timeline: view();
-        animation-range: cover 70% cover 95%;
     }
 }
 
