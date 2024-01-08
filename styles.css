@@ -175,9 +175,11 @@ nav p {
     justify-content: center;
     align-items: center;
 
-    animation: fade-out linear both;
-    animation-timeline: view();
-    animation-range: cover 50% cover 65%;
+    @media screen and (min-width: 767px) {
+        animation: fade-out linear both;
+        animation-timeline: view();
+        animation-range: cover 50% cover 65%;
+    }
 }
 
 @keyframes fade-out {
