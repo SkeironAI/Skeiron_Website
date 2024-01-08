@@ -18,13 +18,24 @@
                 <p><a href="contact.html">Contact</a></p>
                 <p><a href="portfolio.html">Portfolio</a></p>
             </div>
+            <button class="hamburger">
+                <div class="bar"></div>
+            </button>
         </div>
+    </nav>
+    <nav class="mobile_nav">
+        <a href="index.html" class="material-icons">home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="portfolio.html">Portfolio</a>
     </nav>
     <main>
         <section class="service_learn_more">
             <section class="service_learn_more_sub">
-                <h1>AI Integration</h1>
-                <h2>Automating business processes.</h2>
+                <h1 class="ai_integration_h1">AI Integration</h1>
+                <h2 class="ai_integration_h2_a">Automating business processes.</h2>
+                <h2 class="ai_integration_h2_b">AI Integration</h2>
                 <p>At Skeiron, our AI Integration service is all about crafting personalized chatbots tailored to your business. These chatbots are like digital assistants that automate important tasks, such as handling customer inquiries and supporting staff training sessions. They seamlessly become a part of your team, working behind the scenes to make your processes more efficient.</p>
                 <p>With these chatbots in place, routine tasks become automated, freeing up time for your team to focus on more complex matters. They swiftly handle customer queries, providing instant support, and assist in training your staff by offering interactive modules. Our goal is to leverage AI to enhance your operations, simplifying tasks and enriching the overall customer experience.</p>
             </section>
@@ -64,16 +75,5 @@
         </section>
     </main>
 </body>
-<script>
-    const card = document.getElementById("card");
-
-card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 1.5;
-    const y = e.clientY - rect.top - rect.height / 1.5;
-
-    const angle = Math.atan2(-x, y);
-    card.style.setProperty("--rotation", angle + "rad");
-});
-</script>
+<script src="main.js"></script>
 </html>
