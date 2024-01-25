@@ -817,12 +817,30 @@ h2 {
 }
 
 .privacy_policy_main_section {
-    height: 300vh;
+    height: auto;
     width: 100%;
     display: flex;
 
-    align-items: center;
+    align-items: start;
     justify-content: center;
+
+    background: var(--darkgrey);
+}
+
+.privacy_policy_sub {
+    height: auto;
+    width: 95%;
+
+    margin-top: 6rem;
+
+    @media screen and (max-width: 767px) {
+        width: 85%;
+    }
+}
+
+.privacy_policy_sub h1 {
+    width: 100%;
+    text-align: center;
 }
 
 footer {
